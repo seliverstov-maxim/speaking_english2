@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "state"
     t.text     "description"
     t.integer  "film_id"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "state"
     t.integer  "lang_id"
     t.integer  "film_id"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "state"
     t.integer  "lang_id"
     t.integer  "film_id"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "title"
     t.string   "state"
     t.text     "description"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
   create_table "langs", force: true do |t|
     t.string   "name"
     t.string   "state"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,6 +82,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "title"
     t.string   "state"
     t.text     "description"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
   create_table "tags", force: true do |t|
     t.string   "name"
     t.string   "state"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

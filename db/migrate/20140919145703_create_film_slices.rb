@@ -7,6 +7,7 @@ class CreateFilmSlices < ActiveRecord::Migration
       t.string :state
       t.text :description
       t.references :film
+      t.datetime :deleted_at
 
       t.timestamps
     end

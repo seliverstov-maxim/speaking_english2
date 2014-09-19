@@ -4,4 +4,6 @@ class Film < ActiveRecord::Base
 
   has_many :video_files
   has_many :sub_files
+
+  include Removable
 end

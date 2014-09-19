@@ -1,6 +1,6 @@
-class CreateSubFiles < ActiveRecord::Migration
+class CreateFilmSubFiles < ActiveRecord::Migration
   def change
-    create_table :sub_files do |t|
+    create_table :film_sub_files do |t|
       t.string :url
       t.string :state
       t.references :lang, index: true

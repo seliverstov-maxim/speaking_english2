@@ -68,8 +68,11 @@ GEM
       debugger-ruby_core_source (~> 1.3.5)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.3.5)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -98,12 +101,16 @@ GEM
     method_source (0.8.2)
     mime-types (2.3)
     minitest (5.4.1)
+    minitest-rails (2.1.0)
+      minitest (~> 5.4)
+      railties (~> 4.1)
     multi_json (1.10.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
+    predicated (0.2.6)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -129,12 +136,18 @@ GEM
     raindrops (0.13.0)
     rake (10.3.2)
     ref (1.0.5)
+    ruby2ruby (2.1.2)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.0)
+    ruby_parser (3.6.2)
+      sexp_processor (~> 4.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    sexp_processor (4.4.4)
     slop (3.6.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -170,6 +183,12 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    wrong (0.7.1)
+      diff-lcs (~> 1.2.5)
+      predicated (~> 0.2.6)
+      ruby2ruby (>= 2.0.1)
+      ruby_parser (>= 3.0.1)
+      sexp_processor (>= 4.0)
 
 PLATFORMS
   ruby
@@ -178,10 +197,12 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   capistrano-rails
   debugger
+  factory_girl
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+  minitest-rails
   pry
   rails (= 4.1.6)
   ransack!
@@ -192,3 +213,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   unicorn
+  wrong

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
       resources :films, only: [:index, :edit, :new, :create, :update, :destroy]
       resources :tags, only: [:index, :edit, :new, :create, :update, :destroy]
+      resources :langs, only: [:index, :edit, :new, :create, :update, :destroy]
     end
   end
 end

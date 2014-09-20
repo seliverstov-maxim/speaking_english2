@@ -26,6 +26,7 @@ group :development, :test do
   #gem 'spring'
   gem 'factory_girl'
   gem 'minitest-rails'
+  gem 'minitest-reporters'
   gem 'capistrano-rails'
   gem 'debugger'
   gem 'pry'

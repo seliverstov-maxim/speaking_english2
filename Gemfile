@@ -16,7 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'

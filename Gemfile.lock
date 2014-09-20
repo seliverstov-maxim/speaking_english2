@@ -81,6 +81,9 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.3.5)
     diff-lcs (1.2.5)
+    disposable (0.0.6)
+      representable (~> 2.0.3)
+      uber
     erubis (2.7.0)
     execjs (2.2.1)
     factory_girl (4.4.0)
@@ -118,6 +121,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.3)
+    mini_portile (0.6.0)
     minitest (5.4.1)
     minitest-rails (2.1.0)
       minitest (~> 5.4)
@@ -131,6 +135,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     predicated (0.2.6)
@@ -159,7 +165,16 @@ GEM
     raindrops (0.13.0)
     rake (10.3.2)
     ref (1.0.5)
-    ruby-progressbar (1.5.1)
+    reform (1.1.1)
+      activemodel
+      disposable (~> 0.0.5)
+      representable (~> 2.0.3)
+      uber (~> 0.0.8)
+    representable (2.0.4)
+      multi_json
+      nokogiri
+      uber (~> 0.0.7)
+    ruby-progressbar (1.6.0)
     ruby2ruby (2.1.2)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -172,6 +187,9 @@ GEM
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
     sexp_processor (4.4.4)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slop (3.6.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -195,6 +213,7 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.8)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -227,7 +246,9 @@ DEPENDENCIES
   pry
   rails (= 4.1.6)
   ransack!
+  reform
   sass-rails (~> 4.0.3)
+  simple_form
   sqlite3
   state_machine!
   therubyracer

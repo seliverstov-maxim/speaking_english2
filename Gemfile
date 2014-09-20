@@ -17,6 +17,7 @@ gem 'unicorn'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 #временно, пока не поправят баг в основной репе (state-machine)

@@ -32,7 +32,7 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'capistrano-rails'
   gem 'debugger'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'wrong'
 end
 

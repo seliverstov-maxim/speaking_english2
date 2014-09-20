@@ -21,7 +21,7 @@ end
   tag = Tag.where(name: params[:tag]).first
   film = Film.where(title: params[:film_title]).first
 
-  video = Film::VideoFile.where(url: params[:url]).first_or_create!
+  video = VideoFile.where(url: params[:url]).first_or_create!
   video.update!({lang_id: lang.id, film_id: film.id})
 end
 
@@ -33,7 +33,7 @@ end
   tag = Tag.where(name: params[:tag]).first
   film = Film.where(title: params[:film_title]).first
 
-  sub = Film::SubFile.where(url: params[:url]).first_or_create!
+  sub = SubFile.where(url: params[:url]).first_or_create!
   sub.update!({lang_id: lang.id, film_id: film.id})
 end
 

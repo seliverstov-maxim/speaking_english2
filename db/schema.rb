@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.datetime "updated_at"
   end
 
+  create_table "lang_relations", force: true do |t|
+    t.integer  "lang_id"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lang_relations", ["lang_id"], name: "index_lang_relations_on_lang_id"
+  add_index "lang_relations", ["target_id"], name: "index_lang_relations_on_target_id"
+
   create_table "langs", force: true do |t|
     t.string   "name"
     t.string   "state"

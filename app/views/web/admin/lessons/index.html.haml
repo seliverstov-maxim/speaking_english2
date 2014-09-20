@@ -1,0 +1,31 @@
+.page-header
+  %h1=t '.title'
+
+= link_to t('.new'), new_admin_lesson_path, class: 'btn btn-primary pull-right'
+
+- if @lessons.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.id= sort_link(@q, :id)
+        %th.fullname= sort_link(@q, :title)
+        %th.actions= t 'helpers.actions'
+    %tbody
+      - @lessons.each do |lesson|
+        %tr
+          %td= lesson.id
+          %td= lesson.title
+          %td.btn-lg
+            = link_to edit_admin_lesson_path(lesson.id) do
+              %i.glyphicon.glyphicon-edit
+            - if lesson.deleted?
+              = link_to admin_lesson_path(lesson, lesson: { state_event: :restore }), method: :patch do
+                %i.glyphicon.glyphicon-share-alt
+            - else
+              = link_to admin_lesson_path(lesson), method: :delete do
+                %i.glyphicon.glyphicon-remove
+
+  = paginate @lessons
+- else
+  .well
+    = t '.no_data'

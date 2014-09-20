@@ -1,0 +1,31 @@
+.page-header
+  %h1=t '.title'
+
+= link_to t('.new'), new_admin_video_file_path, class: 'btn btn-primary pull-right'
+
+- if @video_files.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.id= sort_link(@q, :id)
+        %th.fullname= sort_link(@q, :title)
+        %th.actions= t 'helpers.actions'
+    %tbody
+      - @video_files.each do |video_file|
+        %tr
+          %td= video_file.id
+          %td= video_file.url
+          %td.btn-lg
+            = link_to edit_admin_video_file_path(video_file.id) do
+              %i.glyphicon.glyphicon-edit
+            - if video_file.deleted?
+              = link_to admin_video_file_path(video_file, video_file: { state_event: :restore }), method: :patch do
+                %i.glyphicon.glyphicon-share-alt
+            - else
+              = link_to admin_video_file_path(video_file), method: :delete do
+                %i.glyphicon.glyphicon-remove
+
+  = paginate @video_files
+- else
+  .well
+    = t '.no_data'

@@ -1,0 +1,31 @@
+.page-header
+  %h1=t '.title'
+
+= link_to t('.new'), new_admin_sub_file_path, class: 'btn btn-primary pull-right'
+
+- if @sub_files.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.id= sort_link(@q, :id)
+        %th.fullname= sort_link(@q, :title)
+        %th.actions= t 'helpers.actions'
+    %tbody
+      - @sub_files.each do |sub_file|
+        %tr
+          %td= sub_file.id
+          %td= sub_file.url
+          %td.btn-lg
+            = link_to edit_admin_sub_file_path(sub_file.id) do
+              %i.glyphicon.glyphicon-edit
+            - if sub_file.deleted?
+              = link_to admin_sub_file_path(sub_file, sub_file: { state_event: :restore }), method: :patch do
+                %i.glyphicon.glyphicon-share-alt
+            - else
+              = link_to admin_sub_file_path(sub_file), method: :delete do
+                %i.glyphicon.glyphicon-remove
+
+  = paginate @sub_files
+- else
+  .well
+    = t '.no_data'

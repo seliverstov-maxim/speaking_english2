@@ -3,12 +3,14 @@ Rails.application.routes.draw do
     root 'welcome#index'
 
     namespace :admin do
-      root 'welcome#index'
+      root 'users#index'
 
       resources :films, only: [:index, :edit, :new, :create, :update, :destroy]
       resources :tags, only: [:index, :edit, :new, :create, :update, :destroy]
       resources :langs, only: [:index, :edit, :new, :create, :update, :destroy]
       resources :film_slices, only: [:index, :edit, :new, :create, :update, :destroy]
+      resources :video_files, only: [:index, :edit, :new, :create, :update, :destroy]
+      resources :sub_files, only: [:index, :edit, :new, :create, :update, :destroy]
     end
   end
 end

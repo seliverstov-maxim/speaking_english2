@@ -34,5 +34,6 @@ group :development, :test do
   gem 'debugger'
   gem 'pry-rails'
   gem 'wrong'
+  gem 'awesome_print'
 end
 

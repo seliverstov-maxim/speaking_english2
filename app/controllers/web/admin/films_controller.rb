@@ -24,7 +24,6 @@ class Web::Admin::FilmsController < Web::Admin::ApplicationController
     @form = FilmForm.new(Film.find(params[:id]))
     if @form.validate(params[:film] || {})
       @form.save
-      ap @form
       redirect_to admin_films_path
     else
       render :edit

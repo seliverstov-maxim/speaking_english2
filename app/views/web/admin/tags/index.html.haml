@@ -1,0 +1,31 @@
+.page-header
+  %h1=t '.title'
+
+= link_to t('.new'), new_admin_tag_path, class: 'btn btn-primary pull-right'
+
+- if @tags.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.id= sort_link(@q, :id)
+        %th.fullname= sort_link(@q, :title)
+        %th.actions= t 'helpers.actions'
+    %tbody
+      - @tags.each do |tag|
+        %tr
+          %td= tag.id
+          %td= tag.name
+          %td.btn-lg
+            = link_to edit_admin_tag_path(tag.id) do
+              %i.glyphicon.glyphicon-edit
+            - if tag.deleted?
+              = link_to admin_tag_path(tag, tag: { state_event: :restore }), method: :patch do
+                %i.glyphicon.glyphicon-share-alt
+            - else
+              = link_to admin_tag_path(tag), method: :delete do
+                %i.glyphicon.glyphicon-remove
+
+  = paginate @tags
+- else
+  .well
+    = t '.no_data'

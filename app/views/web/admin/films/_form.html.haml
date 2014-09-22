@@ -2,6 +2,7 @@
   = f.error_notification
   = f.input :title
   = f.input :description
+  = f.input :tag_ids, as: :select, collection: tag_collection, input_html: { multiple: true, class: 'select2' }
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

@@ -1,0 +1,28 @@
+%table.table.table-condensed.table-bordered
+  %tbody
+    %tr
+      %td
+        %strong= 'Lesson id'
+      %td= @lesson.id
+    %tr
+      %td
+        %strong= 'Title'
+      %td= @lesson.title
+    - @lesson.film_slices.each do |fs|
+      %tr
+        %td
+          %strong= 'Start at'
+        %td= fs.start_at
+      %tr
+        %td
+          %strong= 'Stop at'
+        %td= fs.stop_at
+      %tr
+        %td
+          %strong= 'Video url'
+        %td= fs.film.video_files.first.url
+      %tr
+        %td
+          %strong= 'Subtitles url'
+        %td= fs.film.sub_files.first.url
+

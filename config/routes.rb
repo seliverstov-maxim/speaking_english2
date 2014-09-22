@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope module: :web do
-    root 'welcome#index'
+    root 'welcome#show'
 
     resource :welcome, only: [:show]
     resources :lessons, only: [:index, :show]

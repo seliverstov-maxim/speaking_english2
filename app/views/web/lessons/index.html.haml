@@ -1,0 +1,14 @@
+- if @lessons.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t('.lesson_id')
+        %th= t('.lesson_name')
+    %tbody
+      - @lessons.each do |lesson|
+        %tr
+          %td= lesson.id
+          %td= link_to lesson.title, lesson_path(lesson.id)
+  = paginate @lessons
+- else
+  .well= t('.no_data')

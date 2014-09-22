@@ -1,4 +1,6 @@
 en:
   layouts:
+    application:
+      logo: 'SpeakingEnglish'
     admin_application:
       logo: 'SpeakingEnglish'

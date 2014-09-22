@@ -38,8 +38,8 @@ end
 end
 
 [
-  {start_at: Time.at(0.second), stop_at: Time.at(34.seconds), film_title: 'test_film1', title: 'slice1'},
-  {start_at: Time.at(0.second), stop_at: Time.at(34.seconds), film_title: 'test_film2', title: 'slice2'}
+  {start_at: 0, stop_at: 34, film_title: 'test_film1', title: 'slice1'},
+  {start_at: 0, stop_at: 34, film_title: 'test_film2', title: 'slice2'}
 ].each do |params|
   film = Film.where(title: params[:film_title]).first
   film_slice = FilmSlice.where(title: params[:title]).first_or_create!

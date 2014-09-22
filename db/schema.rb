@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20140919150752) do
   add_index "film_slice_lessons", ["lesson_id"], name: "index_film_slice_lessons_on_lesson_id"
 
   create_table "film_slices", force: true do |t|
-    t.time     "start_at"
-    t.time     "stop_at"
+    t.integer  "start_at"
+    t.integer  "stop_at"
     t.string   "title"
     t.string   "state"
     t.text     "description"

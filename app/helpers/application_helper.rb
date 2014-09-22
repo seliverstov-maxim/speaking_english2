@@ -18,4 +18,8 @@ module ApplicationHelper
   def film_slice_collection
     FilmSlice.pluck(:title, :id)
   end
+
+  def lang_collection
+    Lang.pluck(:name, :id)
+  end
 end

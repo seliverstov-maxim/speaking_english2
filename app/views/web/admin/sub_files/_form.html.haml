@@ -2,6 +2,8 @@
   = f.error_notification
   = f.input :url
 
+  = f.input :lang_ids, as: :select, collection: lang_collection, input_html: { multiple: true, class: 'select2' }
+
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'
     = link_to t('helpers.links.cancel'), admin_sub_files_path, :class => 'btn'

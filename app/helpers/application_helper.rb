@@ -10,4 +10,8 @@ module ApplicationHelper
   def sub_collection
     SubFile.pluck(:name, :id)
   end
+
+  def film_collection
+    Film.pluck(:title, :id)
+  end
 end

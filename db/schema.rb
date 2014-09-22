@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
   end
 
   create_table "sub_files", force: true do |t|
+    t.string   "name"
     t.string   "url"
     t.string   "state"
     t.integer  "lang_id"
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140919150752) do
   end
 
   create_table "video_files", force: true do |t|
+    t.string   "name"
     t.string   "url"
     t.string   "state"
     t.integer  "lang_id"

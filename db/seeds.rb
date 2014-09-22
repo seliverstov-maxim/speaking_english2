@@ -22,7 +22,7 @@ end
   film = Film.where(title: params[:film_title]).first
 
   video = VideoFile.where(url: params[:url]).first_or_create!
-  video.update!({lang_id: lang.id, film_id: film.id})
+  video.update!({lang_id: lang.id, film_id: film.id, name: params[:film_title]})
 end
 
 [
@@ -34,7 +34,7 @@ end
   film = Film.where(title: params[:film_title]).first
 
   sub = SubFile.where(url: params[:url]).first_or_create!
-  sub.update!({lang_id: lang.id, film_id: film.id})
+  sub.update!({lang_id: lang.id, film_id: film.id, name: params[:film_title]})
 end
 
 [

@@ -1,6 +1,7 @@
 class CreateVideoFiles < ActiveRecord::Migration
   def change
     create_table :video_files do |t|
+      t.string :name
       t.string :url
       t.string :state
       t.references :lang, index: true

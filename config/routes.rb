@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   scope module: :web do
     root 'welcome#index'
 
+    resource :welcome, only: [:show]
+    resources :lessons, only: [:index, :show]
+
     namespace :admin do
-      root 'users#index'
+      root 'lessons#index'
 
       resources :films, only: [:index, :edit, :new, :create, :update, :destroy]
       resources :tags, only: [:index, :edit, :new, :create, :update, :destroy]

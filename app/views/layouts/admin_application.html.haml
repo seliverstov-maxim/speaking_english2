@@ -28,13 +28,13 @@
         .navbar-brand= link_to  t('.logo'), admin_root_path
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to t('.films'), admin_films_path
+            %li= link_to t('.lessons'), admin_lessons_path
             %li= link_to t('.film_slices'), admin_film_slices_path
+            %li= link_to t('.films'), admin_films_path
+            %li= link_to t('.video_files'), admin_video_files_path
+            %li= link_to t('.subs_file'), admin_sub_files_path
             %li= link_to t('.tags'), admin_tags_path
             %li= link_to t('.langs'), admin_langs_path
-            %li= link_to t('.videos'), admin_video_files_path
-            %li= link_to t('.subs'), admin_sub_files_path
-            %li= link_to t('.lessons'), admin_lessons_path
 
     .container
       .row

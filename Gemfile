@@ -20,6 +20,7 @@ gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :b
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'reform'
 gem 'simple_form'
+gem 'select2-rails'
 
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 #временно, пока не поправят баг в основной репе (state-machine)

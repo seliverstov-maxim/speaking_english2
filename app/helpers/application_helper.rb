@@ -14,4 +14,8 @@ module ApplicationHelper
   def film_collection
     Film.pluck(:title, :id)
   end
+
+  def film_slice_collection
+    FilmSlice.pluck(:title, :id)
+  end
 end

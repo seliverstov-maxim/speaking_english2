@@ -25,4 +25,15 @@
         %td
           %strong= 'Subtitles url'
         %td= fs.film.sub_files.first.url
-
+      %tr
+        %td
+          %strong= 'Embed player'
+        %td
+          %iframe{id: "player_1", src: [fs.film.video_files.first.url, 'api=1&amp;player_id=player_1'].join('?'), width: "540", height: "304", frameborder: "0"}
+      %tr
+        %td
+          %strong= 'Player Controls'
+        %td
+          %button.btn.btn-primary.play= 'Play'
+          %button.btn.btn-primary.stop= 'Stop'
+          %button.btn.btn-primary.seek= 'Seek 30'

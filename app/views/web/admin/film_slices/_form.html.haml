@@ -5,7 +5,8 @@
   = f.input :start_at, as: :integer
   = f.input :stop_at, as: :integer
 
-  = f.input :film_id, as: :select, collection: film_collection, input_html: { class: 'select2' }
+  = f.input :video_file_ids, as: :select, collection: video_collection, input_html: { multiple: true, class: 'select2' }
+  = f.input :sub_file_ids, as: :select, collection: sub_collection, input_html: { multiple: true, class: 'select2' }
   = f.input :tag_ids, as: :select, collection: tag_collection, input_html: { multiple: true, class: 'select2' }
 
   .form-actions

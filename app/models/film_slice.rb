@@ -1,7 +1,8 @@
 class FilmSlice < ActiveRecord::Base
   include Taggable
 
-  belongs_to :film
+  has_many :video_files, class_name: 'VideoFile'
+  has_many :sub_files, class_name: 'SubFile'
 
   include Removable
 end

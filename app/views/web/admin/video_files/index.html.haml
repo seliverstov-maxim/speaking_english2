@@ -8,12 +8,14 @@
     %thead
       %tr
         %th.id= sort_link(@q, :id)
+        %th.fullname= sort_link(@q, :name)
         %th.fullname= sort_link(@q, :title)
         %th.actions= t 'helpers.actions'
     %tbody
       - @video_files.each do |video_file|
         %tr
           %td= video_file.id
+          %td= video_file.name
           %td= video_file.url
           %td.btn-lg
             = link_to edit_admin_video_file_path(video_file.id) do

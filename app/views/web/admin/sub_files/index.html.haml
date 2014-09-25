@@ -8,12 +8,14 @@
     %thead
       %tr
         %th.id= sort_link(@q, :id)
-        %th.fullname= sort_link(@q, :title)
+        %th.fullname= sort_link(@q, :name)
+        %th.fullname= sort_link(@q, :url)
         %th.actions= t 'helpers.actions'
     %tbody
       - @sub_files.each do |sub_file|
         %tr
           %td= sub_file.id
+          %td= sub_file.name
           %td= sub_file.url
           %td.btn-lg
             = link_to edit_admin_sub_file_path(sub_file.id) do

@@ -1,5 +1,6 @@
 = simple_form_for [:admin, @form], html: { class: 'form-horizontal' } do |f|
   = f.error_notification
+  = f.input :name
   = f.input :url
 
   = f.input :lang_ids, as: :select, collection: lang_collection, input_html: { multiple: true, class: 'select2' }

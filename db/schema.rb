@@ -35,15 +35,6 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.datetime "updated_at"
   end
 
-  create_table "films", force: true do |t|
-    t.string   "title"
-    t.string   "state"
-    t.text     "description"
-    t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "lang_relations", force: true do |t|
     t.integer  "lang_id"
     t.integer  "target_id"
@@ -77,13 +68,13 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "url"
     t.string   "state"
     t.integer  "lang_id"
-    t.integer  "film_id"
+    t.integer  "film_slice_id"
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sub_files", ["film_id"], name: "index_sub_files_on_film_id"
+  add_index "sub_files", ["film_slice_id"], name: "index_sub_files_on_film_slice_id"
   add_index "sub_files", ["lang_id"], name: "index_sub_files_on_lang_id"
 
   create_table "tag_relations", force: true do |t|
@@ -110,13 +101,13 @@ ActiveRecord::Schema.define(version: 20140919150752) do
     t.string   "url"
     t.string   "state"
     t.integer  "lang_id"
-    t.integer  "film_id"
+    t.integer  "film_slice_id"
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "video_files", ["film_id"], name: "index_video_files_on_film_id"
+  add_index "video_files", ["film_slice_id"], name: "index_video_files_on_film_slice_id"
   add_index "video_files", ["lang_id"], name: "index_video_files_on_lang_id"
 
 end

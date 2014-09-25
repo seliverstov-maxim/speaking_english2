@@ -6,5 +6,6 @@ class FilmSliceForm < Reform::Form
   property :stop_at
 
   property :tag_ids
-  property :film_id
+  property :video_file_ids
+  property :sub_file_ids
 end

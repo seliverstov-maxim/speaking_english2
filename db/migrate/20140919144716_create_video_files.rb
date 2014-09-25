@@ -5,7 +5,7 @@ class CreateVideoFiles < ActiveRecord::Migration
       t.string :url
       t.string :state
       t.references :lang, index: true
-      t.references :film, index: true
+      t.references :film_slice, index: true
       t.datetime :deleted_at
 
       t.timestamps

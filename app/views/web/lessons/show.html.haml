@@ -20,16 +20,16 @@
       %tr
         %td
           %strong= 'Video url'
-        %td= fs.film.video_files.first.url
+        %td= fs.video_files.first.url
       %tr
         %td
           %strong= 'Subtitles url'
-        %td= fs.film.sub_files.first.url
+        %td= fs.sub_files.first.url
       %tr
         %td
           %strong= 'Embed player'
         %td
-          %iframe{id: "player_1", src: [fs.film.video_files.first.url, 'api=1&amp;player_id=player_1'].join('?'), width: "540", height: "304", frameborder: "0"}
+          %iframe{id: "player_1", class: 'vimeo-player', src: [fs.video_files.first.url, 'api=1&amp;player_id=player_1'].join('?'), width: "540", height: "304", frameborder: "0"}
       %tr
         %td
           %strong= 'Player Controls'

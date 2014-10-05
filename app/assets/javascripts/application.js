@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require froogaloop.min
+//= require srt_parser
+//= require underscore
+//= require moment
 //= require_tree ./frontend

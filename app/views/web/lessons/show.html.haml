@@ -32,6 +32,15 @@
           %iframe{id: "player_1", class: 'vimeo-player', src: [fs.video_files.first.url, 'api=1&amp;player_id=player_1'].join('?'), width: "540", height: "304", frameborder: "0"}
       %tr
         %td
+          %strong= 'Subtit'
+        %td
+          .subtitle.hidden
+            %code
+              -# TODO RAW FORMAT exploit XSS injection
+              = raw File.read('public/system/subs/friends-s01e02.srt')
+          .subtitle-output
+      %tr
+        %td
           %strong= 'Player Controls'
         %td
           %button.btn.btn-primary.play= 'Play'

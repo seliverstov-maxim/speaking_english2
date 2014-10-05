@@ -9,9 +9,19 @@ $(function(){
 			player.addEvent('playProgress', VimeoHandlers.onPlayProgress);
 		});
 	});
+
+
+	subtitle = SrtParse($('.subtitle code').html());
+//	subtitle = _.groupBy(subtitle, 'start')
 });
 
 var VimeoHandlers = {
-	onPlayProgress: function(data, id) { console.log(data.seconds + 's played') },
+	onPlayProgress: function(data, id) {
+		milisec = data.seconds * 1000
+		sub_line = _.find(subtitle, function(e){ return(e.start < milisec && e.stop > milisec) })
+		if(sub_line){
+			$('.subtitle-output').html(sub_line.text)
+		}
+	},
 	onSeek: function (data, id) { console.log(data.seconds + 's seek') }
 }
